@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+main {
+  padding: 1rem;
+  margin: auto;
+}
+
+form {
+  display: inline;
+}
+
+h1 {
+    text-align: center;
+    background-color: #333333;
+    color: white;
+    padding: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: black;
+    padding: 10px;
+}
+
+.btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .department-list li {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .center-label{
+    display: block;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .dropdown {
+    display: block;
+    width: 200px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .radio-container {
+    display: block;
+    gap: inline;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .form-control {
+    margin-bottom: 20px;
+  }
+
+.center-input {
+  display: block;
+  margin: 0 auto;
+  text-align: left;
+  width: 300px;
+  height: 35px;
+}
+
+.form-box {
+  border: 1px solid #cccccc;
+  padding: 20px;
+  margin: 20px;
+}

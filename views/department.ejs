@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/page.css"> 
+</head>
+<body>
+    <h1> <%= department.name %> </h1>
+
+    <form action="/departmentpage2/<%= department.id %>" method="POST">
+        <label for="roll" class="center-label">Roll</label>
+        <select id="roll" name="roll" class="dropdown" value="Operator">
+          <option value="Operator">Operator</option>
+          <option value="Supervisor">Supervisor</option>
+        </select>
+
+        <div class="radio-container">
+            <input type="radio" id="morningShift" name="radioOption">
+            <label for="morningShift">M-Shift</label>
+    
+            <input type="radio" id="eveningShift" name="radioOption">
+            <label for="eveningShift">E-Shift</label>
+    
+            <input type="radio" id="nightShift" name="radioOption">
+            <label for="nightShift">N-Shift</label>
+        </div>
+
+        <div class="form-control">
+            <label for="brandSD" class="center-label">Brand SD</label>
+            <input type="text" name = "brandSD" id="brandSD" class="center-input">
+        </div>
+
+        <div class="form-control">
+            <label for="date" class="center-label">Date</label>
+            <input type="date" name = "date" id="date" class="center-input">
+        </div>
+
+        <div class="form-control">
+            <label for="dayEngineer" class="center-label">Day - Engineer</label>
+            <input type="text" name = "dayEngineer" id="dayEngineer" class="center-input">
+        </div>
+
+        <div class="form-control">
+            <label for="inCharge" class="center-label">In Charge</label>
+            <input type="text" name = "inCharge" id="inCharge" class="center-input">
+        </div>
+
+        <button class="btn" type="submit" id="nextPage" name="nextPage">Next</button>
+    </form>
+
+    
+</body>
+</html>

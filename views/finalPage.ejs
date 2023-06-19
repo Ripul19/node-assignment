@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/page.css"> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1> <%= department.name %> </h1>
+
+    <div id="formContainer">
+        <div class="form-box">
+            <form action="/save" method="POST" class="dynamic-form">
+                <label for="item" class="center-label">Item</label>
+                <select id="item" name="item" class="dropdown">
+                    <% values.forEach(value => { %>
+                        <option value="<%= value.name %>"> <%= value.name %> </option>
+                    <% }) %>
+                </select>
+        
+                <div class="radio-container">
+                    <label for="unit">Unit:</label>
+                    <input type="text" id="unit" name="unit" readonly>
+        
+                    <label for="code">Code:</label>
+                    <input type="text" id="code" name="code" readonly>
+                </div>
+        
+            
+                <div class="radio-container">
+                    <input type="radio" id="morningShift" name="radioOption" value="morningShift">
+                    <label for="morningShift">M-Shift</label>
+
+                    <input type="radio" id="eveningShift" name="radioOption" value="eveningShift">
+                    <label for="eveningShift">E-Shift</label>
+
+                    <input type="radio" id="nightShift" name="radioOption" value="nightShift">
+                    <label for="nightShift">N-Shift</label>
+                </div>
+
+                <label for="time" class="center-label">Time</label>
+                <select type="time" id="shiftTime" name="shiftTime" class="dropdown">
+                    <option value="09:00">09:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="21:00">21:00</option>
+                    <option value="01:00">01:00</option>
+                    <option value="05:00">05:00</option>
+                </select>
+            
+            </form>
+        </div>
+    </div>
+
+    <button type="button" id="addMoreBtn"> + Add More</button>
+    <button type="button" id="submit" class="btn">Confirm Submit</button>
+
+    <script>
+        $(document).ready(function() {
+            let formCount = 1;
+
+            // Attach event listener for item change
+            $(document).on('change', 'form.dynamic-form select#item', function() {
+                let selectedItem = $(this).val();
+    
+                if (selectedItem === 'DOW DH5148 I Temp. (SV) (For poly pipe)') {
+                    $(this).siblings('.radio-container').find('#unit').val('°C');
+                    $(this).siblings('.radio-container').find('#code').val('on Panel');
+                } else if (selectedItem === 'DOW DH5148 I Temp. (PV) (For poly pipe)') {
+                    $(this).siblings('.radio-container').find('#unit').val('°C');
+                    $(this).siblings('.radio-container').find('#code').val('on Panel');
+                } else if(selectedItem === 'Poly temp. after 5 way valve') {
+                    $(this).siblings('.radio-container').find('#unit').val('°C');
+                    $(this).siblings('.radio-container').find('#code').val('TIR-5103');
+                } else if(selectedItem === 'Poly press. after 5 way valve') {
+                    $(this).siblings('.radio-container').find('#unit').val('kg/cm²');
+                    $(this).siblings('.radio-container').find('#code').val('PIR-5103');
+                } else if(selectedItem === 'Poly temp. after 3 way valve') {
+                    $(this).siblings('.radio-container').find('#unit').val('°C');
+                    $(this).siblings('.radio-container').find('#code').val('TIR-5104');
+                } else if(selectedItem === 'Poly press. after 3 way valve') {
+                    $(this).siblings('.radio-container').find('#unit').val('kg/cm²');
+                    $(this).siblings('.radio-container').find('#code').val('PIR-5104');
+                }
+            });
+
+            // Attach event listener for time change
+            $(document).on('change', 'form.dynamic-form select#shiftTime', function() {
+                const selectedTime = $(this).val();
+                const selectedShift = $(this).siblings('.radio-container').find('input[name="radioOption"]:checked').val();
+
+                if (
+                    (selectedShift === 'morningShift' && selectedTime !== '09:00' && selectedTime !== '13:00') ||
+                    (selectedShift === 'eveningShift' && selectedTime !== '17:00' && selectedTime !== '21:00') ||
+                    (selectedShift === 'nightShift' && selectedTime !== '01:00' && selectedTime !== '05:00')
+                ) {
+                    alert('Invalid timing for the selected shift.');
+                }
+            });
+
+            // Handle click event for "Add More" button
+            $('#addMoreBtn').on('click', function() {
+                const clonedFormBox = $('.form-box:first').clone();
+                const formId = `dynamicForm${formCount}`;
+                clonedFormBox.find('form').attr('id', formId);
+                clonedFormBox.appendTo('#formContainer');
+                formCount++;
+
+                // Attach event listener for cloned item change
+                clonedFormBox.find('select#item').on('change', function() {
+                    let selectedItem = $(this).val();
+
+                    if (selectedItem === 'DOW DH5148 I Temp. (SV) (For poly pipe)') {
+                        $(this).siblings('.radio-container').find('#unit').val('°C');
+                        $(this).siblings('.radio-container').find('#code').val('on Panel');
+                    } else if (selectedItem === 'DOW DH5148 I Temp. (PV) (For poly pipe)') {
+                        $(this).siblings('.radio-container').find('#unit').val('°C');
+                        $(this).siblings('.radio-container').find('#code').val('on Panel');
+                    } else if(selectedItem === 'Poly temp. after 5 way valve') {
+                        $(this).siblings('.radio-container').find('#unit').val('°C');
+                        $(this).siblings('.radio-container').find('#code').val('TIR-5103');
+                    } else if(selectedItem === 'Poly press. after 5 way valve') {
+                        $(this).siblings('.radio-container').find('#unit').val('kg/cm²');
+                        $(this).siblings('.radio-container').find('#code').val('PIR-5103');
+                    } else if(selectedItem === 'Poly temp. after 3 way valve') {
+                        $(this).siblings('.radio-container').find('#unit').val('°C');
+                        $(this).siblings('.radio-container').find('#code').val('TIR-5104');
+                    } else if(selectedItem === 'Poly press. after 3 way valve') {
+                        $(this).siblings('.radio-container').find('#unit').val('kg/cm²');
+                        $(this).siblings('.radio-container').find('#code').val('PIR-5104');
+                    }
+                });
+
+                // Attach event listener for cloned time change
+                clonedFormBox.find('select#shiftTime').on('change', function() {
+                    const selectedTime = $(this).val();
+                    const selectedShift = $(this).siblings('.radio-container').find('input[name="radioOption"]:checked').val();
+
+                    if (
+                        (selectedShift === 'morningShift' && selectedTime !== '09:00' && selectedTime !== '13:00') ||
+                        (selectedShift === 'eveningShift' && selectedTime !== '17:00' && selectedTime !== '21:00') ||
+                        (selectedShift === 'nightShift' && selectedTime !== '01:00' && selectedTime !== '05:00')
+                    ) {
+                        alert('Invalid timing for the selected shift.');
+                    }
+                });
+            });
+        });
+
+        $('#submit').on('click', function() {
+        const formDataArray = [];
+        $('form.dynamic-form').each(function() {
+            const formData = $(this).serialize();
+            formDataArray.push(formData);
+        });
+
+        // Perform AJAX request to save the form data
+        $.ajax({
+            url: '/save',  // Replace with your server endpoint
+            method: 'POST',  // Replace with the appropriate HTTP method
+            data: formDataArray.join('&'),  // Join form data with '&' delimiter
+            success: function(response) {
+                // Handle successful response from the server
+                console.log('Forms submitted successfully:', response);
+            },
+            error: function(xhr, status, error) {
+                // Handle error during AJAX request
+                console.error('Error submitting forms:', error);
+            }
+        });
+    });
+    </script>
+    
+</body>
+</html>
