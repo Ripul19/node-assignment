@@ -1,0 +1,13 @@
+id,deptId,roll,radioOption,brandSD,date,dayEngineer,inCharge,item,unit,code,radioOption2,shiftTime,createdAt,updatedAt
+1,1,Operator,on,xcas,"2023-06-20 00:00:00",ds,ds,"Poly press. after 5 way valve",kg/cm²,PIR-5103,morningShift,13:00,"2023-06-19 09:10:08","2023-06-19 09:10:08"
+2,1,Supervisor,on,csa,"2023-06-20 00:00:00",cvxs,cxd,"Poly press. after 5 way valve",kg/cm²,PIR-5103,morningShift,13:00,"2023-06-19 09:30:34","2023-06-19 09:30:34"
+3,1,Operator,on,gvfrd,"2023-06-20 00:00:00",ds,dx,"Poly press. after 5 way valve",kg/cm²,PIR-5103,morningShift,09:00,"2023-06-19 09:33:57","2023-06-19 09:33:57"
+4,1,Operator,on,cvsx,"2023-06-20 00:00:00",d,dc,"Poly press. after 5 way valve, DOW DH5148 I Temp. (SV) (For poly pipe)","kg/cm², °C","PIR-5103, on Panel","morningShift, nightShift","09:00, 01:00","2023-06-19 09:41:45","2023-06-19 09:41:45"
+5,1,Operator,on,cas,"2023-06-20 00:00:00",ds,ds,"Poly temp. after 3 way valve, Poly press. after 3 way valve","°C, kg/cm²","TIR-5104, PIR-5104","morningShift, nightShift","09:00, 05:00","2023-06-19 10:16:45","2023-06-19 10:16:45"
+6,1,Operator,on,cas,"2023-06-20 00:00:00",ds,ds,"Poly temp. after 3 way valve, Poly press. after 3 way valve","°C, kg/cm²","TIR-5104, PIR-5104","morningShift, nightShift","09:00, 05:00","2023-06-19 10:17:02","2023-06-19 10:17:02"
+7,1,Operator,on,cas,"2023-06-20 00:00:00",ds,ds,"Poly temp. after 3 way valve, Poly press. after 3 way valve","°C, kg/cm²","TIR-5104, PIR-5104","morningShift, nightShift","09:00, 05:00","2023-06-19 10:18:40","2023-06-19 10:18:40"
+8,1,Operator,on,dea,"2023-06-20 00:00:00",dfs,fcs,"Poly press. after 5 way valve",kg/cm²,PIR-5103,morningShift,09:00,"2023-06-19 10:22:18","2023-06-19 10:22:18"
+9,2,Supervisor,on,cwscf,"2023-06-20 00:00:00",cfsd,cv,"DOW DH5148 I Temp. (PV) (For poly pipe)",°C,"on Panel",morningShift,09:00,"2023-06-19 10:35:02","2023-06-19 10:35:02"
+10,1,Supervisor,on,asc,"2023-06-20 00:00:00",csxa,cd,"Poly temp. after 3 way valve",°C,TIR-5104,morningShift,09:00,"2023-06-19 10:37:18","2023-06-19 10:37:18"
+11,1,Supervisor,on,df,"2023-06-20 00:00:00",s,c,"Poly temp. after 3 way valve",°C,TIR-5104,morningShift,09:00,"2023-06-19 10:38:42","2023-06-19 10:38:42"
+12,1,Operator,on,cwec,"2023-06-20 00:00:00","cd ",xc,"Poly press. after 5 way valve",kg/cm²,PIR-5103,morningShift,09:00,"2023-06-19 10:43:24","2023-06-19 10:43:24"
