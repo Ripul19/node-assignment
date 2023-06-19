@@ -10,9 +10,9 @@ It is build on top of RDBMS to store data
 1. Clone the repo
 2. Change the id password for your SQL database and connection details are in util/database.js file
 3. From data folder you can import the excel files to populate the data and also some sample output data is present
-3.1 departments.csv: This has information about the departments
-3.2 values.csv: This has some data and it is need to populate some data for the forms
-3.3 finalData.csv: This has the sample output and even if you don't import it, you can complete one flow and check the output
+  3.1 departments.csv: This has information about the departments
+  3.2 values.csv: This has some data and it is need to populate some data for the forms
+  3.3 finalData.csv: This has the sample output and even if you don't import it, you can complete one flow and check the output
 
 ## What I Did
 I was able to create a complete flow of the whole form upto saving the data in database
