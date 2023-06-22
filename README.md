@@ -14,6 +14,8 @@ It is build on top of RDBMS to store data
 4. departments.csv: This has information about the departments
 5. values.csv: This has some data and it is need to populate some data for the forms
 6. finalData.csv: This has the sample output and even if you don't import it, you can complete one flow and check the output
+7. Run npm install to download all the node modules.
+8. After all the files are downloaded run **app.js** file or download nodemon after that you can run it with npm start.
 
 ## What I Did
 
